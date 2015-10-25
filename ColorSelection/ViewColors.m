@@ -123,7 +123,7 @@
     if (indexColor == self.arrayColorsPositions.count)
     {
         minColorPosition = [self.arrayColorsPositions[indexColor - 1] floatValue];
-        maxColorPosition = [self.arrayColorsPositions[indexColor] floatValue];;
+        maxColorPosition = [self.arrayColorsPositions[indexColor] floatValue];
     }
     else
     {
