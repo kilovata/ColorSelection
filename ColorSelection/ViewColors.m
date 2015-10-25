@@ -96,4 +96,44 @@
     return middleColorPosition;
 }
 
+- (BOOL)isExistColor:(UIColor *)color
+{
+    BOOL isExist = NO;
+    
+    for (NSInteger i = 0; i < self.arrayColors.count; i++)
+    {
+        if ([color isEqual:self.arrayColors[i]])
+        {
+            isExist = YES;
+            break;
+        }
+    }
+    
+    return isExist;
+}
+
+- (CGFloat)positionOfColor:(UIColor *)color
+{
+    NSInteger indexColor = [self.arrayColors indexOfObject:color];
+    
+    CGFloat minColorPosition = 0;
+    CGFloat middleColorPosition = 0;
+    CGFloat maxColorPosition = 0;
+    
+    if (indexColor == self.arrayColorsPositions.count)
+    {
+        minColorPosition = [self.arrayColorsPositions[indexColor - 1] floatValue];
+        maxColorPosition = [self.arrayColorsPositions[indexColor] floatValue];;
+    }
+    else
+    {
+        minColorPosition = [self.arrayColorsPositions[indexColor] floatValue];
+        maxColorPosition = [self.arrayColorsPositions[indexColor + 1] floatValue];
+    }
+    
+    middleColorPosition = minColorPosition + (maxColorPosition - minColorPosition) / 2;
+    
+    return middleColorPosition;
+}
+
 @end

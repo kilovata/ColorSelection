@@ -48,7 +48,15 @@
 - (void)sliderInit
 {
     [self.slider setMaximumValue:self.viewColors.frame.size.width-1];
-    self.slider.value = self.slider.maximumValue / 2 - 1.f;
+
+    if ([self.viewColors isExistColor:[UIColor brownColor]])
+    {
+        self.slider.value = [self.viewColors positionOfColor:[UIColor brownColor]];
+    }
+    else
+    {
+        self.slider.value = self.slider.maximumValue / 2 - 1.f;
+    }
     self.viewCurrentColor.backgroundColor = [self.viewColors colorWithValue:self.slider.value];
 }
 

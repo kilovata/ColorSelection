@@ -12,5 +12,7 @@
 
 - (UIColor *)colorWithValue:(CGFloat)value;
 - (CGFloat)recalculateCenterOfColorWithValue:(CGFloat)value;
+- (BOOL)isExistColor:(UIColor *)color;
+- (CGFloat)positionOfColor:(UIColor *)color;
 
 @end
