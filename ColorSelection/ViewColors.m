@@ -79,9 +79,9 @@
     for (NSInteger i = 0; i < self.arrayColorsPositions.count; i++)
     {
         CGFloat currentValue = [self.arrayColorsPositions[i] floatValue];
-        if (value < currentValue)
+        if (value <= currentValue && i > 0)
         {
-            minColorPosition = currentValue = [self.arrayColorsPositions[i-1] floatValue];
+            minColorPosition = [self.arrayColorsPositions[i-1] floatValue];
             maxColorPosition = [self.arrayColorsPositions[i] floatValue];
             break;
         }
