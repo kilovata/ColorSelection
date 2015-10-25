@@ -32,8 +32,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
-    [self.slider setMaximumValue:self.viewColors.frame.size.width-1];
+    
+    [self sliderInit];
 }
 
 - (void)setupUI
@@ -43,6 +43,13 @@
     [self.slider setThumbImage:[UIImage imageNamed:@"arrow"] forState:UIControlStateNormal];
     [self.slider setThumbImage:[UIImage imageNamed:@"arrow"] forState:UIControlStateHighlighted];
     [self.slider setMinimumValue:0];
+}
+
+- (void)sliderInit
+{
+    [self.slider setMaximumValue:self.viewColors.frame.size.width-1];
+    self.slider.value = self.slider.maximumValue / 2 - 1.f;
+    self.viewCurrentColor.backgroundColor = [self.viewColors colorWithValue:self.slider.value];
 }
 
 - (void)didReceiveMemoryWarning

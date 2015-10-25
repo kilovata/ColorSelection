@@ -76,6 +76,10 @@
 {
     CGFloat minColorPosition = 0;
     CGFloat maxColorPosition = 0;
+    if (value > [[self.arrayColorsPositions lastObject] floatValue])
+    {
+        value = [[self.arrayColorsPositions lastObject] floatValue];
+    }
     for (NSInteger i = 0; i < self.arrayColorsPositions.count; i++)
     {
         CGFloat currentValue = [self.arrayColorsPositions[i] floatValue];
