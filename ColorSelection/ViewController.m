@@ -40,8 +40,8 @@
 {
     self.viewCurrentColor.layer.cornerRadius = self.viewCurrentColor.frame.size.width/2;
     
-    [self.slider setThumbImage:[UIImage imageNamed:@"arrow"] forState:UIControlStateNormal];
-    [self.slider setThumbImage:[UIImage imageNamed:@"arrow"] forState:UIControlStateHighlighted];
+    [self.slider setThumbImage:[UIImage imageNamed:@"slider"] forState:UIControlStateNormal];
+    [self.slider setThumbImage:[UIImage imageNamed:@"slider"] forState:UIControlStateHighlighted];
     [self.slider setMinimumValue:0];
 }
 
@@ -58,6 +58,7 @@
         self.slider.value = self.slider.maximumValue / 2 - 1.f;
     }
     self.viewCurrentColor.backgroundColor = [self.viewColors colorWithValue:self.slider.value];
+    [self.slider setValue:[self.viewColors recalculateCenterOfColorWithValue:self.slider.value] animated:NO];
 }
 
 - (void)didReceiveMemoryWarning

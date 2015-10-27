@@ -37,11 +37,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0W-j1-7x3" customClass="ViewColors">
-                                <rect key="frame" x="20" y="84" width="560" height="15"/>
+                                <rect key="frame" x="20" y="84" width="560" height="5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="dje-12-UHY"/>
+                                    <constraint firstAttribute="height" constant="5" id="dje-12-UHY"/>
                                 </constraints>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BAU-bN-yNZ">

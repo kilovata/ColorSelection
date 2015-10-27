@@ -21,7 +21,16 @@
 {
     if (self = [super initWithCoder:aDecoder])
     {
-        self.arrayColors = @[[UIColor redColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blueColor], [UIColor purpleColor], [UIColor cyanColor], [UIColor magentaColor], [UIColor brownColor]];
+        self.arrayColors = @[[self colorWithHexValue:0xE936B7],
+                             [self colorWithHexValue:0x9A27E9],
+                             [self colorWithHexValue:0x3F77E6],
+                             [self colorWithHexValue:0x02C0EF],
+                             [self colorWithHexValue:0x15D5A0],
+                             [self colorWithHexValue:0x548E34],
+                             [self colorWithHexValue:0x6EC426],
+                             [self colorWithHexValue:0xECBB00],
+                             [self colorWithHexValue:0xF7811B],
+                             [self colorWithHexValue:0xD91F1F]];
     }
     return self;
 }
@@ -55,7 +64,7 @@
 
 - (UIColor *)colorWithValue:(CGFloat)value
 {
-    return [self colorAtPosition:CGPointMake(value, 5.f)];
+    return [self colorAtPosition:CGPointMake(value, 1.f)];
 }
 
 - (UIColor *)colorAtPosition:(CGPoint)point
@@ -134,6 +143,14 @@
     middleColorPosition = minColorPosition + (maxColorPosition - minColorPosition) / 2;
     
     return middleColorPosition;
+}
+
+- (UIColor *)colorWithHexValue:(int)hexValue
+{
+    float red   = ((hexValue & 0xFF0000) >> 16)/255.0;
+    float green = ((hexValue & 0xFF00) >> 8)/255.0;
+    float blue  = (hexValue & 0xFF)/255.0;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
 @end
